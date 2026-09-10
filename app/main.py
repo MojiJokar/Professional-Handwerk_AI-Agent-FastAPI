@@ -29,8 +29,6 @@ from fastapi import FastAPI
 from app.core.init_db import init_db
 from app.api.routes.customers import router as customer_router
 
-app.include_router(agent_router)
-
 @asynccontextmanager
 async def lifespan(app: FastAPI):
 
@@ -44,7 +42,7 @@ app = FastAPI(
     version="1.0.0",
     lifespan=lifespan,
 )
-
+app.include_router(agent_router)
 app.include_router(customer_router)
 
 @app.get("/")

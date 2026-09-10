@@ -258,6 +258,19 @@ try it out. that is all ,   200
 24: Agent => app/agents/customer_agent.py
 25: Function calling :
 26: Agent model data:
+27:create api agent in app/api/routes/agent.py
+28:add in main.py following:
+from app.api.routes.agent import router as agent_router
+app.include_router(agent_router)
+
+test in swagger:
+POST /agent/process-email
+{
+  "email_text": "Hallo, meine Heizung funktioniert nicht. Ich wohne in Heidelberg. Können Sie morgen kommen? Viele Grüße, Max Müller"
+}
+then you see answer 
+
+29:Human Approval:
 
 
 
