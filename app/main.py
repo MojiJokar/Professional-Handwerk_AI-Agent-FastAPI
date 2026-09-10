@@ -22,11 +22,14 @@
 #==============================================Test over====
 
 from contextlib import asynccontextmanager
+from app.api.routes.agent import router as agent_router
 
 from fastapi import FastAPI
 
 from app.core.init_db import init_db
 from app.api.routes.customers import router as customer_router
+
+app.include_router(agent_router)
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
