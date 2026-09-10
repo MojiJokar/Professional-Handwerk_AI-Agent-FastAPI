@@ -98,6 +98,79 @@ Create first API:
 Terminal:  fastapi dev main.py
 browser:  http://127.0.0.1:8000
 
+http://127.0.0.1:8000/docs
+
+
+=========================================
+Real main Project Structure:
+
+ai-agent-course/
+│
+├── .venv/
+│
+├── app/
+│   │
+│   ├── __init__.py
+│   │
+│   ├── main.py
+│   │
+│   ├── api/
+│   │   ├── __init__.py
+│   │   ├── routes/
+│   │   │   ├── customers.py
+│   │   │   ├── emails.py
+│   │   │   └── agent.py
+│   │
+│   ├── core/
+│   │   ├── config.py
+│   │   └── security.py
+│   │
+│   ├── models/
+│   │   ├── customer.py
+│   │   └── email.py
+│   │
+│   ├── schemas/
+│   │   ├── customer.py
+│   │   └── agent.py
+│   │
+│   ├── services/
+│   │   ├── ai_service.py
+│   │   ├── crm_service.py
+│   │   └── email_service.py
+│   │
+│   └── agents/
+│       ├── customer_agent.py
+│       └── tools.py
+│
+├── tests/
+│
+├── .env
+├── .gitignore
+├── requirements.txt
+└── README.md
+
+ceate: .env
+
+===========
+pip install python-dotenv
+add your keys in .env file
+
+# Test .env use in main.py 
+APP_NAME=AI Agent
+ENVIRONMENT=development
+
+in main.py added a test funciton to test 
+
+just in Terminal type , then in brings all:
+$ pip freeze > requirements.txt
+then you will see in that file ready
+
+
+
+
+
+
+
 
 
 
