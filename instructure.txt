@@ -100,54 +100,73 @@ browser:  http://127.0.0.1:8000
 
 http://127.0.0.1:8000/docs
 
+-Other required packages are following:
+pip install fastapi[standard]
+pip install sqlalchemy
+pip install psycopg[binary]
+pip install pydantic-settings
+pip install python-dotenv
+pip install openai
+pip install alembic
+pip install pytest
+pip install httpx
 
+pip freeze > requirements.txt
 =========================================
 Real main Project Structure:
 
-ai-agent-course/
+ai-agent/
 │
 ├── .venv/
 │
 ├── app/
 │   │
 │   ├── __init__.py
-│   │
 │   ├── main.py
+│   │
+│   ├── core/
+│   │   ├── __init__.py
+│   │   ├── config.py
+│   │   └── database.py
+│   │
+│   ├── models/
+│   │   ├── __init__.py
+│   │   └── customer.py
+│   │
+│   ├── schemas/
+│   │   ├── __init__.py
+│   │   └── customer.py
 │   │
 │   ├── api/
 │   │   ├── __init__.py
-│   │   ├── routes/
-│   │   │   ├── customers.py
-│   │   │   ├── emails.py
-│   │   │   └── agent.py
-│   │
-│   ├── core/
-│   │   ├── config.py
-│   │   └── security.py
-│   │
-│   ├── models/
-│   │   ├── customer.py
-│   │   └── email.py
-│   │
-│   ├── schemas/
-│   │   ├── customer.py
-│   │   └── agent.py
+│   │   └── routes/
+│   │       ├── __init__.py
+│   │       ├── customers.py
+│   │       └── agent.py
 │   │
 │   ├── services/
-│   │   ├── ai_service.py
-│   │   ├── crm_service.py
-│   │   └── email_service.py
+│   │   ├── __init__.py
+│   │   ├── customer_service.py
+│   │   └── ai_service.py
 │   │
 │   └── agents/
+│       ├── __init__.py
 │       ├── customer_agent.py
 │       └── tools.py
 │
 ├── tests/
+│   ├── __init__.py
+│   └── test_customers.py
 │
 ├── .env
 ├── .gitignore
 ├── requirements.txt
 └── README.md
+
+
+
+
+
 
 ceate: .env
 
