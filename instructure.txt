@@ -211,11 +211,15 @@ city
 created_at
 
 10:Migration with alembic
+alembic.ini creates auto after the command
 alembic init alembic
 
-11:
+11: create Database Initialization
+app/core/init_db.py
 
 
+12:Fastapi app/main.py
+$ fastapi dev app/main.py
 
 
 
