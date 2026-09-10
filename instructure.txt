@@ -221,15 +221,43 @@ app/core/init_db.py
 12:Fastapi app/main.py
 $ fastapi dev app/main.py
 
+13: open browser and test : http://127.0.0.1:8000/docs
+
+14: schemas created 
 
 
 
+15: to use emil  install : $ pip install email-validator
+
+15.1 Customer Service part
+
+16: cutomer api :   app , api, routes, cutomers.py
+
+17:connecetion from  Route to app by adding: app.include_router(customer_router)
+to app, main 
+refresh Browser you will see new rows and columns
+
+18: test customer 
+POST/ customer 
+{
+  "name": "Max Müller",
+  "email": "max@example.com",
+  "phone": "+49 170 1234567",
+  "city": "Heidelberg"
+}
+try it out. that is all ,   200
+================================================End of implementation of : FastAPI + PostgreSQL + SQLAlchemy
+20: create ai service  appp/services/ai_service.py
 
 
+22: Tool 1 : find the customer => app/agents/tools.py
+
+23: Tool 2 create custoer
 
 
-
-
+24: Agent => app/agents/customer_agent.py
+25: Function calling :
+26: Agent model data:
 
 
 
