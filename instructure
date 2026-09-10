@@ -82,10 +82,21 @@ Run
 pip install "fastapi[standard]"
 pip show fastapi
 
+Create first API:
+# from fastapi import FastAPI
 
 
+# app = FastAPI()
 
 
+# @app.get("/")
+# def home():
+#     return {
+#         "message": "AI Agent API is running"
+#     }
+
+Terminal:  fastapi dev main.py
+browser:  http://127.0.0.1:8000
 
 
 
