@@ -165,9 +165,6 @@ ai-agent/
 
 
 
-
-
-
 ceate: .env
 
 ===========
@@ -185,7 +182,22 @@ $ pip freeze > requirements.txt
 then you will see in that file ready
 
 
+7.POSTGRESS_SQL: DataBase:
+we can install in our sys or exec by Docker
+we choose the second option
 
+
+turn on your docker desktop and run following :
+$ docker run --name ai-agent-postgres -e POSTGRES_PASSWORD=postgres -e 
+POSTGRES_DB=ai_agent -p 5432:5432 -d postgres
+
+DOCKER COMMANDS:
+ docker ps
+CONTAINER ID   IMAGE      COMMAND                  CREATED          STATUS          PORTS                    NAMES
+8397279f2cfb   postgres   "docker-entrypoint.s…"   48 minutes ago   Up 14 seconds   0.0.0.0:5432->5432/tcp   ai-agent-postgres
+
+
+8:DataBase Connection:
 
 
 
