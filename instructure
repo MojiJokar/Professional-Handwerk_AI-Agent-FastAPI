@@ -4,3 +4,88 @@ Email → AI Agent → Analysis → CRM → Calendar → Response → Human Appr
 
 Along the way, you will learn Python, FastAPI, APIs, databases, authentication, AI agents, tools, and eventually deployment.
 -------------------------------------------
+GitHub section:
+cd "C:\path\to\your\project"
+git init
+git add .
+git commit -m "Initial project setup"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+git push -u origin main
+--------------------------------------------
+
+                    CUSTOMER
+                       │
+                       ▼
+                ┌─────────────┐
+                │    Email    │
+                └──────┬──────┘
+                       │
+                       ▼
+              ┌─────────────────┐
+              │    FastAPI      │
+              │     Backend     │
+              └────────┬────────┘
+                       │
+                       ▼
+                ┌─────────────┐
+                │   AI Agent   │
+                └──────┬──────┘
+                       │
+            ┌──────────┼──────────┐
+            ▼          ▼          ▼
+          CRM      Calendar     Email
+            │          │          │
+            └──────────┼──────────┘
+                       ▼
+                Human Approval
+                       │
+                       ▼
+                    Customer
+
+
+Stages
+Install Python and VS Code
+Create a dedicated project environment
+Get familiar with the Terminal
+Python Basics
+Build your first FastAPI application
+APIs and HTTP
+Pydantic
+Professional Project Structure
+Environment Variables
+Git
+Connect an AI API
+Prompt Engineering
+Structured Output
+Build a Tool
+Function Calling
+Build an AI Agent
+CRM
+Database
+Gmail/Outlook
+Calendar
+Human Approval
+Authentication
+Logging and Error Handling
+Testing
+Docker
+Deployment
+Turn the project into a B2B service
+================================================
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+ctrl_shift+p => type : python interpreter => choose the environemt .venv
+test:  F main.py  print("Hello world")
+Run
+
+
+
+
+
+
+
+
+
+
+
