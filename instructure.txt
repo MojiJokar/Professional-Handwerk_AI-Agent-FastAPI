@@ -198,6 +198,24 @@ CONTAINER ID   IMAGE      COMMAND                  CREATED          STATUS      
 
 
 8:DataBase Connection:
+---------------------------
+
+
+9: Create Customer Model
+ the class in models > customer creates a table called: customers
+ id
+name
+email
+phone
+city
+created_at
+
+10:Migration with alembic
+alembic init alembic
+
+11:
+
+
 
 
 
