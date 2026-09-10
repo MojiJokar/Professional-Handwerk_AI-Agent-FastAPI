@@ -78,6 +78,15 @@ python -m venv .venv
 ctrl_shift+p => type : python interpreter => choose the environemt .venv
 test:  F main.py  print("Hello world")
 Run
+================FastAPI=========================
+pip install "fastapi[standard]"
+pip show fastapi
+
+
+
+
+
+
 
 
 
