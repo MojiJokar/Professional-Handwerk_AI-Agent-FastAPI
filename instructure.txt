@@ -188,8 +188,7 @@ we choose the second option
 
 
 turn on your docker desktop and run following :
-$ docker run --name ai-agent-postgres -e POSTGRES_PASSWORD=postgres -e 
-POSTGRES_DB=ai_agent -p 5432:5432 -d postgres
+docker run --name ai-agent-postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=ai_agent -p 5432:5432 -d postgres
 
 DOCKER COMMANDS:
  docker ps
@@ -211,8 +210,12 @@ city
 created_at
 
 10:Migration with alembic
+$ cd alembic >> alembic init alembic
 alembic.ini creates auto after the command
-alembic init alembic
+alembic/alembic.ini
+config inside alembic direcotry the file called: env.py
+
+
 
 11: create Database Initialization
 app/core/init_db.py
