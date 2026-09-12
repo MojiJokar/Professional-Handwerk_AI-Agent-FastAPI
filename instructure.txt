@@ -186,7 +186,7 @@ then you will see in that file ready
 we can install in our sys or exec by Docker
 we choose the second option
 
-
+VERY VERY IMPORTANT : DOCKER FOR DATABASE 
 turn on your docker desktop and run following :
 docker run --name ai-agent-postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=ai_agent -p 5432:5432 -d postgres
 
