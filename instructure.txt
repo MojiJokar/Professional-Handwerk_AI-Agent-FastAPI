@@ -227,16 +227,24 @@ $ fastapi dev app/main.py
 13: open browser and test : http://127.0.0.1:8000/docs
 
 14: schemas created 
-
+pip install email-validator
 
 
 15: to use emil  install : $ pip install email-validator
 
-15.1 Customer Service part
+16. Customer Service part
 
-16: cutomer api :   app , api, routes, cutomers.py
 
-17:connecetion from  Route to app by adding: app.include_router(customer_router)
+* route in browser should not do db logic:
+HTTP
+ ↓
+Service
+ ↓
+Database
+
+17: cutomer api :   app , api, routes, cutomers.py
+
+18:connecetion from  Route to app by adding: app.include_router(customer_router)
 to app, main 
 refresh Browser you will see new rows and columns
 
@@ -253,10 +261,22 @@ try it out. that is all ,   200
 20: create ai service  appp/services/ai_service.py
 
 
-22: Tool 1 : find the customer => app/agents/tools.py
+21: Tool 1 : find the customer => app/agents/tools.py
 
-23: Tool 2 create custoer
-
+22: Tool 2 create custoer
+Email
+ ↓
+AI
+ ↓
+Decision
+ ↓
+Tool
+ ↓
+Action
+ ↓
+AI
+ ↓
+Final Answer
 
 24: Agent => app/agents/customer_agent.py
 25: Function calling :
@@ -274,6 +294,144 @@ POST /agent/process-email
 then you see answer 
 
 29:Human Approval:
+Email
+ ↓
+AI
+ ↓
+CRM
+ ↓
+Calendar
+ ↓
+Draft
+ ↓
+Human
+
+
+31.Authentication
+Email
+ ↓
+AI
+ ↓
+CRM
+ ↓
+Calendar
+ ↓
+Draft
+ ↓
+Human
+
+=======================Adding security to the project====================
+ai-agent/
+│
+├── app/
+│   │
+│   ├── main.py
+│   │
+│   ├── core/
+│   │   ├── config.py
+│   │   ├── database.py
+│   │   └── init_db.py
+│   │
+│   ├── auth/                    ← NEW: authentication
+│   │   ├── hashing.py
+│   │   ├── jwt.py
+│   │   ├── dependencies.py
+│   │   ├── schemas.py
+│   │   └── routes.py
+│   │
+│   ├── models/
+│   │   ├── customer.py
+│   │   └── user.py
+│   │
+│   ├── schemas/
+│   │   ├── customer.py
+│   │   └── agent.py
+│   │
+│   ├── services/
+│   │   ├── customer_service.py
+│   │   ├── user_service.py
+│   │   └── ai_service.py        ← AI
+│   │
+│   ├── agents/                  ← AI AGENT
+│   │   ├── customer_agent.py
+│   │   └── tools.py
+│   │
+│   └── api/
+│       └── routes/
+│           ├── customers.py
+│           ├── agent.py         ← AI endpoint
+│           └── auth.py
+│
+├── tests/
+│
+├── .env
+├── requirements.txt
+└── README.md
+
+
+***
+Authentication sits before the Agent.
+                    ┌───────────────┐
+                    │     User      │
+                    └───────┬───────┘
+                            │
+                         Login
+                            │
+                            ▼
+                    ┌───────────────┐
+                    │      JWT      │
+                    └───────┬───────┘
+                            │
+                            ▼
+                    ┌───────────────┐
+                    │    FastAPI    │
+                    └───────┬───────┘
+                            │
+                    Authentication
+                            │
+                            ▼
+                    ┌───────────────┐
+                    │  AI Agent     │
+                    └───────┬───────┘
+                            │
+             ┌──────────────┼──────────────┐
+             ▼              ▼              ▼
+        PostgreSQL       Calendar        Email
+             │
+             ▼
+          CRM Data
+
+
+
+
+
+
+
+
+
+
+
+pip install pyjwt
+pip install pwdlib[argon2]
+pip install python-multipart
+
+# app/core/config.py
+
+.env ==>SECRET_KEY=my-super-secret-key
+
+# app/models/user.py
+
+init_db.py
+
+# app/schemas/user.py
+
+Auth Schema
+
+Security Layer: # app/core/security.py
+
+
+
+
 
 
 

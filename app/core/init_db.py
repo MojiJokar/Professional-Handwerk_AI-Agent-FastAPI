@@ -11,25 +11,64 @@
 #         )
 
 
-#===============================================
+#===============================================The last one which worked properlly is following:
+# from app.core.database import engine
+
+
+# async def init_db():
+#     print("DATABASE: testing connection...")
+
+#     try:
+#         async with engine.begin() as conn:
+#             await conn.run_sync(lambda connection: None)
+
+#         print("DATABASE: connection successful!")
+
+#     except Exception as e:
+#         print(f"DATABASE: connection failed!")
+#         print(f"ERROR: {e}")
+#         raise
+    
+#     # to test: $ fastapi dev app/main.py
+
+# for security we use followoing :
 from app.core.database import engine
+
+from app.models.customer import Base
+from app.models.user import User
 
 
 async def init_db():
-    print("DATABASE: testing connection...")
 
-    try:
-        async with engine.begin() as conn:
-            await conn.run_sync(lambda connection: None)
+    async with engine.begin() as conn:
 
-        print("DATABASE: connection successful!")
+        await conn.run_sync(
+            Base.metadata.create_all
+        )
 
-    except Exception as e:
-        print(f"DATABASE: connection failed!")
-        print(f"ERROR: {e}")
-        raise
-    
-#     # to test: $ fastapi dev app/main.py
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # db connection Test 2==================================
 # from fastapi import FastAPI
